@@ -1,0 +1,372 @@
+@font-face {
+  font-family: "Kumbh Sans";
+  src: url("../fonts/KumbhSans-VariableFont_YOPQ,wght.ttf");
+  font-weight: 400-700;
+  font-style: normal;
+}
+
+:root {
+  --orange: hsl(26, 100%, 55%);
+  --pale-orange: hsl(25, 100%, 94%);
+
+  --very-dark-blue: hsl(220, 13%, 13%);
+  --dark-grayish-blue: hsl(219, 9%, 45%);
+  --grayish-blue: hsl(220, 14%, 75%);
+  --light-grayish-blue: hsl(223, 64%, 98%);
+  --white: hsl(0, 0%, 100%);
+  --black-opacity: hsla(0, 0%, 0%, 0.75);
+
+  --fs-paragraph: 16px;
+
+  --ff-base: "Kumbh Sans";
+  --fw-400: 400;
+  --fw-700: 700;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+button {
+  background: none;
+  border: none;
+}
+
+body {
+  font-family: var(--ff-base);
+}
+
+main {
+  display: grid;
+}
+
+main > * {
+  display: grid;
+}
+
+header {
+  display: grid;
+  grid-template-columns: auto 1fr auto auto;
+  grid-auto-flow: column;
+  align-items: center;
+  justify-items: start;
+  padding: 1em;
+  gap: 1em;
+}
+
+header h1 {
+  font-weight: var(--fw-700);
+  font-size: 1.5rem;
+}
+
+header img {
+  max-width: 30px;
+}
+
+header button.menu-icon {
+  background: none;
+  border: none;
+}
+
+header div.cart-container {
+  position: relative;
+}
+
+header div.cart-container span {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  font-size: 9px;
+  background-color: var(--orange);
+  color: var(--white);
+  padding: 0.1em 0.7em;
+  border-radius: 0.7em;
+}
+
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 101%; /* just to be sure */
+  height: 100vh;
+  background-color: var(--black-opacity);
+  display: flex;
+  transition: opacity 0.3s ease;
+  z-index: 999;
+}
+
+nav div.menu {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  height: 100vh;
+  width: 70%;
+  background-color: var(--white);
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  padding: 2em 1em;
+  z-index: 1000;
+}
+
+nav div.menu.show {
+  transform: translateX(0);
+}
+
+nav div.menu ul {
+  list-style: none;
+  padding: 3em 0;
+  display: grid;
+  align-content: start;
+  gap: 2em;
+}
+
+nav div.menu a {
+  text-decoration: none;
+  color: var(--very-dark-blue);
+}
+
+nav div.menu .close-icon {
+  background: none;
+  border: none;
+  position: absolute;
+  top: 2em;
+  left: 1em;
+}
+
+nav div.menu.show {
+  left: 0;
+}
+
+.cart-modal {
+  display: grid;
+  top: 12%;
+  margin: 0 auto;
+  width: 90%;
+  gap: 1em;
+  z-index: 1000;
+  padding: 2em;
+  border: none;
+  border-radius: 0.7em;
+  box-shadow: 0 1em 0.5em var(--very-dark-blue);
+}
+
+.cart-modal .cart-item {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 1em;
+  align-items: center;
+}
+
+.cart-modal img {
+  max-width: 40px;
+  border-radius: 0.3em;
+}
+
+.cart-modal button {
+  background-color: var(--orange);
+  padding: 1em;
+  border-radius: 0.5em;
+}
+
+@media (min-width: 700px) {
+  .main-content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  header button.menu-icon {
+    display: none;
+  }
+  .menu-overlay {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: fit-content;
+    height: max-content;
+    background-color: transparent;
+    transition: none;
+    z-index: -1;
+  }
+  nav div.menu {
+    position: relative;
+    top: 0;
+    left: 0;
+    height: max-content;
+    transform: none;
+    width: max-content;
+    background-color: transparent;
+    z-index: 0;
+    padding: 0;
+    box-shadow: none;
+  }
+  nav div.menu ul {
+    padding: 0;
+  }
+  nav div.menu.show {
+    transform: none;
+  }
+  nav div.menu .close-icon {
+    display: none;
+  }
+  nav div.menu ul {
+    display: flex;
+    align-content: start;
+    gap: 1em;
+  }
+}
+
+.carousel {
+  display: block;
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  height: 400px;
+}
+
+.carousel__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.carousel__track-container {
+  background-color: lightgreen;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel__track {
+  list-style: none;
+  position: relative;
+  height: 100%;
+  transition: transform 250ms ease-in;
+}
+
+.carousel__slide {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+.carousel__button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%); /* to exactly place it halfway */
+  background-color: var(--white);
+  border-radius: 50%;
+  border: none;
+  padding: 0.5em 0.7em;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel__button--left {
+  left: 1em;
+  z-index: 1;
+}
+
+.carousel__button--right {
+  right: 1em;
+}
+
+.carousel__button img {
+  width: 10px;
+}
+
+.carousel__nav {
+  max-width: 100%;
+  display: flex;
+  gap: 1em;
+  padding: 1em 0;
+}
+
+button.carousel__indicator {
+  border: none;
+  background: none;
+}
+.carousel_nav .carousel__indicator img {
+  border-radius: 0.5em;
+}
+
+.product-info {
+  padding: 1em;
+  gap: 1em;
+  display: grid;
+}
+
+.product-info h2 {
+  font-weight: var(--fw-700);
+  color: var(--dark-grayish-blue);
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.product-info p {
+  font-weight: var(--fw-400);
+  color: var(--dark-grayish-blue);
+}
+
+.product-info button {
+  padding: 1em;
+}
+
+.product-info .price-info {
+  display: grid;
+  grid-template-columns: auto auto 1fr;
+  gap: 0.5em;
+  justify-items: end;
+  align-items: center;
+}
+
+.product-info .price-info .current-price {
+  font-size: 1.5rem;
+  font-weight: var(--fw-700);
+  color: var(--very-dark-blue);
+}
+
+.product-info .price-info .discount {
+  background-color: var(--very-dark-blue);
+  color: var(--white);
+  border-radius: 0.5em;
+  padding: 0.2em 0.5em;
+  height: 90%;
+  margin-top: auto;
+}
+
+.product-info .price-info .previous-price {
+  text-decoration: line-through;
+  color: var(--dark-grayish-blue);
+  font-weight: var(--fw-400);
+  margin-right: 0.5em;
+}
+
+.product-info .price-adjust {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.product-info button.add-to-cart {
+  background-color: var(--orange);
+  border-radius: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}
+
+.product-info button.add-to-cart img {
+  color: var(--very-dark-blue);
+  font-family: var(--ff-base);
+}
+
+.is-hidden {
+  display: none;
+}
