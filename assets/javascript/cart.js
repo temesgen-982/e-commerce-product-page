@@ -1,7 +1,7 @@
 const minusCartBtn = document.querySelector(".minus-cart");
 const addCartBtn = document.querySelector(".add-cart");
 const cartAmount = document.querySelector(".cart-amount");
-const cart = document.querySelector(".cart");
+const cart = document.querySelector(".cart__amount");
 const addToCartBtn = document.querySelector(".add-to-cart");
 
 minusCartBtn.addEventListener("click", () => {

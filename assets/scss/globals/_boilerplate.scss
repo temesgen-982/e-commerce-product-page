@@ -1,0 +1,21 @@
+@use "../util";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: util.$ff-base;
+}
+
+button {
+  background: none;
+  border: none;
+}
+
+h1 {
+  font-weight: util.$fw-700;
+  font-size: 1.5rem;
+}

@@ -15,17 +15,18 @@
     <title>Frontend Mentor | E-commerce product page</title>
 
     <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="dist/styles.css" />
   </head>
   <body>
     <main>
       <header>
-        <button class="menu-icon">
+        <button class="menu__open-icon">
           <img src="assets/images/icon-menu.svg" alt="open menu" />
         </button>
         <h1>Sneakers</h1>
-        <nav class="menu-overlay">
-          <div class="menu">
-            <button class="close-icon">
+        <nav class="menu menu--overlay">
+          <div class="menu__content">
+            <button class="menu__close-icon">
               <img src="assets/images/icon-close.svg" alt="close menu" />
             </button>
             <ul>
@@ -37,11 +38,15 @@
             </ul>
           </div>
         </nav>
-        <div class="cart-container">
+        <div class="cart">
           <img src="assets/images/icon-cart.svg" alt="cart" />
-          <span class="cart is-hidden">0</span>
+          <span class="cart__amount is-hidden">0</span>
         </div>
-        <img src="assets/images/image-avatar.png" alt="avatar" />
+        <img
+          src="assets/images/image-avatar.png"
+          class="header__image"
+          alt="avatar"
+        />
       </header>
 
       <dialog class="cart-modal is-hidden">
