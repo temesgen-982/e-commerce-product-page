@@ -19,14 +19,15 @@
   </head>
   <body>
     <main>
-      <header>
-        <button class="menu__open-icon">
+      <header class="header">
+        <button class="header__menu-open-icon">
           <img src="assets/images/icon-menu.svg" alt="open menu" />
         </button>
-        <h1>Sneakers</h1>
-        <nav class="menu menu--overlay">
-          <div class="menu__content">
-            <button class="menu__close-icon">
+        <h1 class="header__title">Sneakers</h1>
+        <nav class="header__menu">
+          <div class="header__menu-overlay"></div>
+          <div class="header__menu-content">
+            <button class="header__menu-close-icon">
               <img src="assets/images/icon-close.svg" alt="close menu" />
             </button>
             <ul>
@@ -38,34 +39,37 @@
             </ul>
           </div>
         </nav>
-        <div class="cart">
+        <div class="header__cart">
           <img src="assets/images/icon-cart.svg" alt="cart" />
-          <span class="cart__amount is-hidden">0</span>
+          <span class="header__cart-amount is-hidden">0</span>
         </div>
         <img
           src="assets/images/image-avatar.png"
-          class="header__image"
+          class="header__avatar"
           alt="avatar"
         />
       </header>
 
-      <dialog class="cart-modal is-hidden">
+      <dialog class="cart is-hidden">
         <h2>Cart</h2>
         <hr />
-        <div class="cart-item">
+        <div class="cart__item">
           <img
             src="assets/images/image-product-1-thumbnail.jpg"
             alt="product image"
+            class="cart__icon"
           />
-          <div class="item-info">
+          <div class="cart__item-name">
             <p>Fall Limited Edition Sneakers</p>
+          </div>
+          <div class="cart__item-price">
             <p>$125.00 x 3 <span>$375.00</span></p>
           </div>
-          <div>
+          <div class="cart__delete-icon">
             <img src="assets/images/icon-delete.svg" alt="delete item" />
           </div>
         </div>
-        <button class="checkout-cart">Checkout</button>
+        <button class="cart__checkout">Checkout</button>
       </dialog>
 
       <div class="main-content">
