@@ -1,0 +1,70 @@
+.product-info {
+  padding: 1em;
+  gap: 1em;
+  display: grid;
+
+  h2 {
+    font-weight: var(--fw-700);
+    color: var(--dark-grayish-blue);
+    font-size: 1rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  p {
+    font-weight: var(--fw-400);
+    color: var(--dark-grayish-blue);
+  }
+
+  button {
+    padding: 1em;
+  }
+
+  .price-info {
+    display: grid;
+    grid-template-columns: auto auto 1fr;
+    gap: 0.5em;
+    justify-items: end;
+    align-items: center;
+
+    .current-price {
+      font-size: 1.5rem;
+      font-weight: var(--fw-700);
+      color: var(--very-dark-blue);
+    }
+    .discount {
+      background-color: var(--very-dark-blue);
+      color: var(--white);
+      border-radius: 0.5em;
+      padding: 0.2em 0.5em;
+      height: 90%;
+      margin-top: auto;
+    }
+    .previous-price {
+      text-decoration: line-through;
+      color: var(--dark-grayish-blue);
+      font-weight: var(--fw-400);
+      margin-right: 0.5em;
+    }
+  }
+
+  .price-adjust {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  button.add-to-cart {
+    background-color: var(--orange);
+    border-radius: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+
+    img {
+      color: var(--very-dark-blue);
+      font-family: var(--ff-base);
+    }
+  }
+}

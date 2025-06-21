@@ -4,7 +4,7 @@
 // throw an error if the parameter has a unit
 @function rem($pixel) {
   // If $pixel has a unit, throw an error
-  @if math.is-uniteless($pixel) {
+  @if math.is-unitless($pixel) {
     @return math.div($pixel, 16) + rem;
   }
   // otherwise return the rem
@@ -16,7 +16,7 @@
 // this one is for em
 @function em($pixel) {
   // If $pixel has a unit, throw an error
-  @if math.is-uniteless($pixel) {
+  @if math.is-unitless($pixel) {
     @return math.div($pixel, 16) + rem;
   }
   // otherwise return the em
