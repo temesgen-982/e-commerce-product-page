@@ -1,58 +1,43 @@
+@use "../util";
+
 main {
   display: grid;
   > * {
     display: grid;
   }
 }
-@media (min-width: 700px) {
-  .main-content {
-    display: grid;
-    grid-template-columns: auto 1fr;
+
+.main-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  @include util.breakpoint(large) {
+    grid-template-columns: 1fr 2fr;
     gap: 3em;
     width: 70%;
     padding: 2em 0;
     margin: 0 auto;
+    align-items: start;
+
+    // Ensure children fill their grid cells
+    > .carousel,
+    > .product-info {
+      width: 100%;
+      max-width: none;
+      height: 100%;
+      align-self: stretch;
+      justify-self: stretch;
+    }
   }
-  header button.menu__open-icon {
-    display: none;
-  }
-  .menu--overlay {
-    position: relative;
-    top: 0;
-    left: 0;
-    width: fit-content;
-    height: max-content;
-    background-color: transparent;
-    transition: none;
-    z-index: -1;
-  }
-  .menu__content {
-    position: relative;
-    top: 0;
-    left: 0;
-    height: max-content;
-    transform: none;
-    width: max-content;
-    background-color: transparent;
-    z-index: 0;
-    padding: 0;
-    box-shadow: none;
-  }
-  .menu__content ul {
-    padding: 0;
-  }
-  nav div.menu.show {
-    transform: none;
-  }
-  .menu__content .menu__close-icon {
-    display: none;
-  }
-  .menu__content ul {
-    display: flex;
-    align-content: start;
-    gap: 1em;
-  }
-  .carousel__image {
-    border-radius: 1em;
-  }
+}
+
+.carousel {
+  width: 100%;
+  max-width: none;
+  height: 100%;
+}
+
+.product-info {
+  width: 100%;
+  max-width: none;
+  height: 100%;
 }

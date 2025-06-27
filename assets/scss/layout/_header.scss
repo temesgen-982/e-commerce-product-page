@@ -10,7 +10,9 @@
   gap: 1em;
 
   @include util.breakpoint(large) {
-    /* some media query here */
+    &__menu-open-icon {
+      display: none;
+    }
   }
 
   &__cart {

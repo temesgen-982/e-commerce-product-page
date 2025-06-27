@@ -1,6 +1,6 @@
-const openCartBtn = document.querySelector(".cart-container");
-const cartModal = document.querySelector(".cart-modal");
-const checkoutBtn = document.querySelector(".checkout-cart");
+const openCartBtn = document.querySelector(".header__cart");
+const cartModal = document.querySelector(".cart");
+const checkoutBtn = document.querySelector(".cart__checkout");
 
 openCartBtn.addEventListener("click", () => {
   cartModal.classList.toggle("is-hidden");

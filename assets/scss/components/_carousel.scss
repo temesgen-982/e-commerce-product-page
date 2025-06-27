@@ -1,14 +1,27 @@
+@use "../util";
+
 .carousel {
   display: block;
   position: relative;
   width: 100%;
   margin: 0 auto;
-  height: 400px;
+  min-height: 400px;
 
   &__image {
     width: 100%;
     height: 100%;
     object-fit: cover;
+  }
+
+  @include util.breakpoint(large) {
+    
+    &__image {
+      border-radius: 1em;
+    }
+    .carousel__indicator.active img {
+      outline: 2px solid hsl(26, 100%, 55%); // orange border
+      opacity: 0.5;
+    }
   }
 
   &__track-container {
@@ -29,6 +42,7 @@
     top: 0;
     bottom: 0;
     width: 100%;
+    z-index: 1;
   }
 
   &__button {
@@ -59,9 +73,13 @@
 
   &__nav {
     max-width: 100%;
-    display: flex;
+    display: none;
     gap: 1em;
     padding: 1em 0;
+
+    @include util.breakpoint(large) {
+      display: flex;
+    }
 
     .carousel__indicator {
       border: none;

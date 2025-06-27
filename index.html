@@ -23,8 +23,8 @@
           <img src="assets/images/icon-menu.svg" alt="open menu" />
         </button>
         <h1 class="header__title">Sneakers</h1>
-        <nav class="header-menu is-hidden">
-          <div class="header-menu__overlay"></div>
+        <nav class="header-menu">
+          <div class="header-menu__overlay is-hidden"></div>
           <div class="header-menu__content">
             <button class="header-menu__close-icon">
               <img src="assets/images/icon-close.svg" alt="close menu" />
@@ -72,12 +72,12 @@
       </dialog>
 
       <div class="main-content">
-        <div class="carousel">
-          <button class="carousel__button carousel__button--left">
+        <div class="carousel" role="region" aria-label="Product image carousel">
+          <button class="carousel__button carousel__button--left" aria-label="Previous slide">
             <img src="assets/images/icon-previous.svg" alt="" />
           </button>
           <div class="carousel__track-container">
-            <ul class="carousel__track">
+            <ul class="carousel__track" aria-live="polite">
               <li class="carousel__slide current-slide">
                 <img
                   class="carousel__image"
@@ -108,29 +108,29 @@
               </li>
             </ul>
           </div>
-          <button class="carousel__button carousel__button--right">
+          <button class="carousel__button carousel__button--right" aria-label="Next slide">
             <img src="assets/images/icon-next.svg" alt="" />
           </button>
           <div class="carousel__nav">
-            <button class="carousel__indicator">
+            <button class="carousel__indicator" aria-label="Go to slide 1">
               <img
                 src="assets/images/image-product-1-thumbnail.jpg"
                 alt="product 1 thumbnail"
               />
             </button>
-            <button class="carousel__indicator">
+            <button class="carousel__indicator" aria-label="Go to slide 2">
               <img
                 src="assets/images/image-product-2-thumbnail.jpg"
                 alt="product 2 thumbnail"
               />
             </button>
-            <button class="carousel__indicator">
+            <button class="carousel__indicator" aria-label="Go to slide 3">
               <img
                 src="assets/images/image-product-3-thumbnail.jpg"
                 alt="product 3 thumbnail"
               />
             </button>
-            <button class="carousel__indicator">
+            <button class="carousel__indicator" aria-label="Go to slide 4">
               <img
                 src="assets/images/image-product-4-thumbnail.jpg"
                 alt="product 4 thumbnail"
@@ -144,7 +144,7 @@
           <h3>Fall Limited Edition Sneakers</h3>
           <p>
             These low-profile sneakers are your perfect casual wear companion.
-            Featuring a durable rubber outer sole, they’ll withstand everything
+            Featuring a durable rubber outer sole, they'll withstand everything
             the weather can offer.
           </p>
           <div class="price-info">
@@ -166,19 +166,39 @@
           </button>
         </div>
       </div>
+      
+      <div class="lightbox__overlay" role="dialog" aria-modal="true" style="display: none;">
+        <div class="lightbox__modal">
+          <button class="lightbox__close" aria-label="Close lightbox">
+            <img src="assets/images/icon-close.svg" alt="close" />
+          </button>
+          <div class="lightbox__image-container">
+            <button class="lightbox__arrow lightbox__arrow--left" aria-label="Previous image">
+              <img src="assets/images/icon-previous.svg" alt="previous" />
+            </button>
+            <img class="lightbox__image" src="" alt="Product image enlarged" />
+            <button class="lightbox__arrow lightbox__arrow--right" aria-label="Next image">
+              <img src="assets/images/icon-next.svg" alt="next" />
+            </button>
+          </div>
+          <div class="lightbox__thumbnails"></div>
+        </div>
+      </div>
 
-      <footer>
+      <!-- <footer>
         <p>
           Challenge by
           <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
             >Frontend Mentor</a
           >. Coded by <a href="#">temesgen-982</a>.
         </p>
-      </footer>
+      </footer> -->
     </main>
+    
     <script src="assets/javascript/carousel.js"></script>
+    <script src="assets/javascript/lightbox.js"></script>
     <script src="assets/javascript/menu.js"></script>
     <script src="assets/javascript/cart.js"></script>
-    <!-- <script src="assets/javascript/cart-modal.js"></script> -->
+    <script src="assets/javascript/cart-modal.js"></script>
   </body>
 </html>
